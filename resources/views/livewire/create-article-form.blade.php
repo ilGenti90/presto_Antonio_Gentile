@@ -1,6 +1,6 @@
 <form class="matrix-card p-5 my-5" wire:submit.prevent="store">
     @if (session()->has('success'))
-        <div class="alert alert-success text-center">
+        <div class="alert alert-matrix text-center">
             {{ session('success') }}
         </div>
     @endif

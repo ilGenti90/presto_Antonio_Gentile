@@ -14,8 +14,22 @@
                 </h1>
 
                 @if (session('status'))
-                <div class="alert alert-success">
+                <div class="alert alert-matrix">
                     {{ session('status') }}
+                </div>
+                @endif
+
+                 @if (session('message'))
+                <div class="alert alert-matrix">
+                    {{ session('message') }}
+                </div>
+                @endif
+
+                
+
+                @if (session()->has('errorMessage'))
+                <div class="alert alert-matrix-danger text-center shadow rounded w-50">
+                    {{ session('errorMessage') }}
                 </div>
                 @endif
 

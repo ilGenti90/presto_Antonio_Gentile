@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -19,3 +21,16 @@ Route::get('/show/article/{article}' , [ArticleController::class, 'show'])->name
 
 //categorie navbar
 Route::get('/category/{category}' , [ArticleController::class, 'byCategory'])->name('byCategory');
+
+//controller revisor
+Route::get('/revisor/index' , [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+Route::patch('/accepted/{article}' , [RevisorController::class, 'accept'])->name('accept');
+Route::patch('/rejected/{article}' , [RevisorController::class, 'reject'])->name('reject');
+
+//MAIL
+
+// Become Revisor
+Route::get('/revisor/request' , [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+//make revisor
+Route::get('/make/revisor/{user}' , [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
