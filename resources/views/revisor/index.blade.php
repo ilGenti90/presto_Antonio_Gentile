@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5 mb-5">
         <div class="row">
-            <div class="col-3">
-                <div class="matrix-card p-3">
-                    <h1 class="display-5 text-center pb-2">
+            <div class="col-12 col-md-3">
+                <div class="matrix-card p-3" style="min-height:auto; cursor:default;">
+                    <h1 class="text-center pb-2" style="font-size: 1.5rem;">
                         Revisor dashboard
                     </h1>
                 </div>
@@ -59,7 +59,7 @@
     @else
     <div class="row justify-content-center align-items-center height-custom text-center">
         <div class="col-12">
-            <h1 class="fst-italic display-4">
+            <h1 class="fst-italic display-5">
                 Nessun articolo da revisionare
             </h1>
             <a href="{{ route('homepage') }}" class="mt-5 btn btn-custom-sm">Torna all'homepage</a>

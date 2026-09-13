@@ -34,3 +34,5 @@ Route::get('/revisor/request' , [RevisorController::class, 'becomeRevisor'])->mi
 //make revisor
 Route::get('/make/revisor/{user}' , [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
+//RICERCA ARTICOLI
+Route::get('/search/article' , [PublicController::class, 'searchArticles'])->name('article.search');

@@ -6,7 +6,7 @@
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+      </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
@@ -88,6 +88,16 @@
         @endauth
 
       </ul>
+      
+      <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+    <div class="input-group">
+        <input type="search" name="query" class="form-control form-control-matrix" placeholder="Search" aria-label="search">
+        <button type="submit" class="input-group-text btn-custom-sm" id="basic-addon2">
+            Search
+        </button>
+    </div>
+</form>
+
     </div>
   </div>
 </nav>
