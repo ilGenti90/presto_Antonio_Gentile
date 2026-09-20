@@ -17,12 +17,12 @@
         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
         aria-expanded="false">
-        Categorie
+        {{__('ui.categories') }}
     </a>
     <ul class="dropdown-menu dropdown-menu-matrix dropdown-menu-end">
         @foreach ($categories as $category)
             <li><a class="dropdown-item text-capitalize"
-                    href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                    href="{{ route('byCategory', ['category' => $category]) }}">{{ __("ui.$category->name") }}</a>
             </li>
             @if (!$loop->last)
                 <li><hr class="dropdown-divider"></li>
@@ -35,7 +35,7 @@
 
     @if (Auth::user()->is_revisor)
         <li class="nav-item position-relative">
-            <a class="nav-link" href="{{ route('revisor.index') }}">Zona revisore
+            <a class="nav-link" href="{{ route('revisor.index') }}">{{__('ui.AuditorArea') }}
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 {{ App\Models\Article::ToBeRevisionedCount() }}
                 <span class="visually-hidden">unread messages</span>
@@ -49,18 +49,18 @@
 
       
          <li class="nav-item">
-          <a class="nav-link" href="{{ route('article.index') }}">Tutti gli articoli</a>
+          <a class="nav-link" href="{{ route('article.index') }}">{{__('ui.allArticles') }}</a>
         </li>
 
         @auth
 
         <li class="nav-item dropdown">
           <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ciao , {{ Auth::user()->name }}
+            {{__('ui.hello') }} , {{ Auth::user()->name }}
           </a>
 
           <ul class="dropdown-menu dropdown-menu-matrix dropdown-menu-end">
-            <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea un articolo</a></li>
+            <li><a class="dropdown-item" href="{{ route('create.article') }}">{{__('ui.createArticle') }}</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#"
               onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
@@ -75,13 +75,13 @@
 
       <li class="nav-item dropdown">
           <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ciao , Utente!
+           {{__('ui.hello') }} {{__('ui.user') }}!
           </a>
         
        <ul class="dropdown-menu dropdown-menu-matrix dropdown-menu-end">
         <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+        <li><a class="dropdown-item" href="{{ route('register') }}">{{__('ui.signUp') }}</a></li>
         </ul>
       </li>
       
@@ -89,7 +89,7 @@
 
       </ul>
       
-      <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+      <form class="d-flex ms-auto me-2" role="search" action="{{ route('article.search') }}" method="GET">
     <div class="input-group">
         <input type="search" name="query" class="form-control form-control-matrix" placeholder="Search" aria-label="search">
         <button type="submit" class="input-group-text btn-custom-sm" id="basic-addon2">
@@ -97,6 +97,9 @@
         </button>
     </div>
 </form>
+<x-_locale lang="it"/>
+<x-_locale lang="uk"/>
+<x-_locale lang="es"/>
 
     </div>
   </div>

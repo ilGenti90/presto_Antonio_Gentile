@@ -34,17 +34,17 @@
                 @endif
 
                 <p class="header-sub mt-3">
-                    Tutto ciò di cui hai bisogno in un click.
+                   {{__('ui.EyNiOc')}}
                 </p>
-                <span class="text-white">Compra, vendi, scambia: il futuro degli annunci è qui.</span>
+                <span class="text-white">{{__('ui.BsT:')}}</span>
 
                 <div class="d-flex justify-content-center flex-wrap mt-3">
-                    <button class="btn btn-custom btn-red" onclick="window.location.href='{{ route('homepage') }}'">Scopri di più</button>
+                    <button class="btn btn-custom btn-red" onclick="window.location.href='{{ route('homepage') }}'"> {{__('ui.FoM')}}</button>
                     <button class="btn btn-custom btn-blue" onclick="window.location.href='{{ route('homepage') }}'">Click Here</button>
                     
                      <div>
                     @auth
-                        <a class="btn btn-custom" onclick="window.location.href='{{ route('create.article') }}'">Pubblica un articolo</a>
+                        <a class="btn btn-custom" onclick="window.location.href='{{ route('create.article') }}'">{{__('ui.PaA')}}</a>
                     @endauth
                 </div>
                 </div>
@@ -54,8 +54,8 @@
     </div>
 
 <!-- SEZIONE ARTICOLI RECENTI -->
- 
-    <div class="row height-custom justify-content-center align-items-center py-5">
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center py-5">
         @forelse ($articles as $article)
         <div class="col-12 col-md-3">
             <x-card :article="$article" />
@@ -63,9 +63,12 @@
         @empty
         <div class="col-12">
             <h3 class="text-center">
-                Non sono ancora  presenti articoli
+               {{__('ui.ThereAreNoArticles')}}
             </h3>
         </div>
         @endforelse
     </div>
+</div>
+<!--FINE ARTICOLI RECENTI-->
+
 </x-layout>

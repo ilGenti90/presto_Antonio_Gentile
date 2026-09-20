@@ -1,9 +1,3 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-
-window.Swiper = Swiper;
-window.SwiperNavigation = Navigation;
-window.SwiperPagination = Pagination;
-
+import Swiper from 'swiper'; import { Navigation, Pagination } from 'swiper/modules'; import 'swiper/css'; import 'swiper/css/navigation'; import 'swiper/css/pagination'; window.Swiper = Swiper; window.SwiperNavigation = Navigation; window.SwiperPagination = Pagination;
 import './script';
 import 'bootstrap';
