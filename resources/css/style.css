@@ -861,6 +861,20 @@ footer a:hover{
 
 /* fine aggiunte successive */
 
+.img-preview{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+}
+
+.img-matrix {
+  box-shadow: 0 0 14px rgba(0,255,0,0.25);
+  border: 1px solid rgba(0,255,0,0.3);
+}
+
+
 
 
 

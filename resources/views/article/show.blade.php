@@ -6,23 +6,28 @@
             </div>
         </div>
         <div class="row mt-3 justify-content-center py-5">
+
             <div class="col-12 col-md-6 mb-3">
+                @if ($article->images->count() > 0)
                 <div class="swiper article-swiper">
                     <div class="swiper-wrapper">
+                        @foreach ($article->images as $key => $image)
                         <div class="swiper-slide">
-                            <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow" alt="...">
+                            <img src="{{ Storage::url($image->path) }}" class="d-block w-100 rounded shadow"
+                                alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow" alt="...">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow" alt="...">
-                        </div>
+                        @endforeach
                     </div>
-                    <div class="swiper-button-next"></div>
+                    @if ($article->images->count() > 1)
                     <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    @endif
                 </div>
+                @else
+                <img src="https://picsum.photos/300" class="d-block w-100 rounded shadow" alt="Nessuna foto inserita dall'utente">
+                @endif
             </div>
+
             <div class="col-12 col-md-6 mb-3 text-center">
                 <h2 class="display-5"><span class="fw-bold">Titolo: </span>{{ $article->title }}</h2>
                 <div class="d-flex flex-column justify-content-center h-75">
@@ -35,14 +40,14 @@
     </div>
 
     <div class="d-flex justify-content-center mt-4">
-    <a href="{{ route('article.index') }}" class="btn btn-custom ">
-        ← Torna alla lista
-    </a>
-</div>
+        <a href="{{ route('article.index') }}" class="btn btn-custom ">
+            ← Torna alla lista
+        </a>
+    </div>
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             new Swiper('.article-swiper', {
                 modules: [SwiperNavigation, SwiperPagination],
                 navigation: {

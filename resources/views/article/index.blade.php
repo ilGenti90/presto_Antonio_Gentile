@@ -5,7 +5,7 @@
                 <h1 class="display-1 "> {{__('ui.allArticles') }} </h1>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center py-5">
+        <div class="row  justify-content-center  py-5">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-3 ">
                     <x-card :article="$article" />
