@@ -313,13 +313,18 @@ BOTTONI HEADER
   background-color: var(--green);
   border: 2px solid var(--green);
   border-radius: 50px;
-  padding: 8px 12px;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   transition: transform .25s ease, background-color .25s ease, border-color .25s ease;
   margin: 0;
   text-align: center;
-  white-space: nowrap;
+ white-space: normal;
+  overflow-wrap: normal;   /* non spezza le parole a metà */
+  word-break: normal;    /* mantiene le parole intere */
+  line-height: 1.3;
+  flex: 1 1 45%;
+  min-width: 0;
+  padding: 8px 6px;
 }
 
 

@@ -13,11 +13,12 @@
                     <div class="swiper-wrapper">
                         @foreach ($article->images as $key => $image)
                         <div class="swiper-slide">
-                            <img src="{{ Storage::url($image->path) }}" class="d-block w-100 rounded shadow"
+                            <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100 rounded shadow"
                                 alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
                         </div>
                         @endforeach
                     </div>
+
                     @if ($article->images->count() > 1)
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
