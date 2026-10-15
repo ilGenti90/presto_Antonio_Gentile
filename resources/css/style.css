@@ -879,6 +879,19 @@ footer a:hover{
   border: 1px solid rgba(0,255,0,0.3);
 }
 
+.btn-custom-sm2 {
+  color: var(--black);
+  background-color: var(--green);
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  transition: transform .25s ease, background-color .25s ease, border-color .25s ease;
+  margin: 1px;
+  text-align: center;
+  padding: 8px 6px;
+}
+
 
 
 

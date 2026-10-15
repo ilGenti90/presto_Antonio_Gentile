@@ -92,7 +92,7 @@
       <form class="d-flex ms-auto me-2" role="search" action="{{ route('article.search') }}" method="GET">
     <div class="input-group">
         <input type="search" name="query" class="form-control form-control-matrix" placeholder="Search" aria-label="search">
-        <button type="submit" class="input-group-text btn-custom-sm" id="basic-addon2">
+        <button type="submit" class="input-group-text btn-custom-sm2" id="basic-addon2">
             Search
         </button>
     </div>
